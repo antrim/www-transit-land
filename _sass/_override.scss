@@ -1,0 +1,65 @@
+html,body{
+  width:100%;
+  height:100%;
+}
+body{
+  font-family:$base-font-family;
+  overflow-x:hidden;
+  overflow-y:scroll;
+}
+
+div,section{ box-sizing: border-box;}
+
+::-moz-selection,::selection {
+   background-color: #ccc;
+   color: #fff;
+}
+
+section{
+  position: relative;
+  width: 100%;
+  height:100%;
+  min-height:550px;
+  max-height:750px;
+  display: block;
+}
+
+.jumbotron{
+  margin:0;
+  background-color:#fff;
+}
+
+.jumbotron .container{
+  max-width:1030px;
+}
+
+a{
+  text-decoration: none;
+  color:nth($logo-hover-colors,2);
+  &:hover{
+    text-decoration: none;
+  }
+}
+ul{
+  list-style-type:none;
+  padding: 0 0;
+  & li::after{
+    font-family:$font-awesome;
+    content:" \f08e ";
+  }
+}
+
+@include media-query($on-pad){
+  .jumbotron{  
+    height:auto;
+    margin:0;
+    padding:70px 0;
+  }
+  section{
+    position: relative;
+    width: 100%;
+    height:auto;
+    max-height:1000px;
+    display: block;
+  }
+}

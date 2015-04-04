@@ -1,0 +1,179 @@
+h2{
+  font-weight:700;
+  font-size:32px;
+  letter-spacing: 2px;
+  display:inline;
+  vertical-align: middle;
+  margin:0 auto;
+}
+
+.container{
+  position:relative;
+  top:10%;
+  width:100%;
+  margin:0 auto;
+}
+
+.title{
+  margin-bottom:$spacing-unit;
+}
+
+.col-1{color:$logo-color-1;}
+.col-2{color:$logo-color-2;}
+.col-3{color:$logo-color-3;}
+.col-4{color:$logo-color-4;}
+.col-5{color:$logo-color-5;}
+
+.blue-bg{background-color: $logo-color-3;}
+.orange-bg{background-color: $logo-color-4;}
+
+.white-text{color:#fff;}
+.center-text{text-align: center;}
+
+/* page specific*/
+
+#index-1 h2{
+  padding-top:0px;
+  white-space: nowrap;
+}
+
+#index-1 .row{
+  padding : 20px;
+}
+
+#index-2 .badges-wrapper{
+ margin-top:80px;
+ margin-left: auto;
+ margin-right: auto;
+ width: 360px;
+}
+
+.badge-circle{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  background:#fff;
+  border:3px solid #ccc;
+  float:left;
+  background-size:cover;
+  margin-left:15px;
+  margin-right:15px;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.action-circle{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  background:#fff;
+  border:3px solid #ccc;
+  
+  
+  margin:0 auto;
+  display:block;
+  margin-bottom:#spacing-unit;
+}
+
+#trans-badge-1{background-image:url(../images/badges/badge_train.png);}
+#trans-badge-2{background-image:url(../images/badges/badge_bus.png);}
+#trans-badge-3{background-image:url(../images/badges/badge_cablecar.png);}
+#trans-badge-4{background-image:url(../images/badges/badge_ferry.png);}
+#trans-badge-5{background-image:url(../images/badges/badge_tram.png);}
+#trans-badge-6{background-image:url(../images/badges/badge_trolley.png);}
+
+
+#index-{
+  @for $i from 1 through 4 {
+    &#{$i} .container{
+      @if $i == 1 {
+        top : 10%;
+      }@else{
+        top:25%;
+      }
+    }
+  }
+}
+
+#index-2 p{font-size:18px;}
+#index-4 h3{margin-bottom:30px;}
+
+@include media-query($on-pad){
+  /* page specific*/
+  #index-1 h2{
+    font-weight:700;
+    font-size:26px;
+    letter-spacing: 1.6px;
+    display:inline;
+    line-height:1em;
+    vertical-align: middle;
+    white-space: normal;
+    margin:0 auto;
+  }
+  #index-1.jumbotron{
+    min-height:600px;
+  }
+  #index-1 .container{
+    padding-top:0px;
+    padding-bottom:0px;
+    margin-bottom:0px;
+  }
+
+  #index-2 .badges-wrapper{
+   margin-top:20px;
+  }
+  #playground-demo{
+  top:300px;
+  }
+  
+  .container{
+    padding:0px 2.55%;
+    position:relative;
+    top:35%;
+    width:100%;
+    margin:0 auto;
+  }
+  #index-2 .container{
+  top:15%;
+  }
+  #index-4.container{
+    top:15%;
+  }
+}
+
+@include media-query($on-palm){
+
+  #index-2{
+    height:950px;
+  }
+  #index-2 .badges-wrapper{
+   margin-top:0px;
+   margin-left: auto;
+   margin-right: auto;
+   width: 300px;
+  }
+  #playground-demo{
+    top:450px;
+  }
+  .badge-circle{
+    width:80px;
+    height:80px;
+    margin-left:5px;
+    margin-right:5px;
+    margin-top:5px;
+    margin-bottom:5px;
+  }
+  .container{
+    padding:0px 1.55%;
+    position:relative;
+    top:15%;
+    width:100%;
+    margin:0 auto;
+  }
+  #index-2 .container{
+  top:5%;
+  }
+  #index-4 .container{
+    top:15%;
+  }
+}
