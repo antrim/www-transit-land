@@ -39,17 +39,47 @@ section{
 
 a{
   text-decoration: none;
-  color:nth($logo-hover-colors,2);
+  color:nth($logo-colors,4);
   &:hover{
     text-decoration: none;
   }
 }
 
+h2{
+  font-weight:700;
+  font-size:32px;
+  letter-spacing: 2px;
+  display:inline;
+  vertical-align: middle;
+  margin:0 auto;
+}
+
+h3{
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  font-size:24px;
+}
+
+@include media-query($on-ipad){
+  .jumbotron{
+    margin:0 0 0 0;
+  }
+  .navbar-header{margin-top:$spacing-unit;}
+  .navbar-toggle{margin-top:$spacing-unit;}
+}
 @include media-query($on-pad){
   .jumbotron{  
     height:auto;
-    margin:0 0 $footer-h 0;
-    padding:30px 0;
+    padding:$spacing-unit 0;
+  }
+  #index-2.jumbotron{  
+    padding:$spacing-unit*4 0;
+  }
+  #index-3.jumbotron{  
+    padding:$spacing-unit*4 0;
+  }
+  #index-4.jumbotron{  
+    padding:$spacing-unit*4 0;
   }
   section{
     position: relative;
