@@ -1,22 +1,24 @@
+dependencies:
+  pre:
+    - sudo pip install -U awscli
 machine:
   ruby:
     version: 2.1.2
 database:
   override:
-    - echo "we need no database" 
+    - echo "we need no database"
 test:
   override:
     - echo "we need no tests"
-dependencies:
-  post:
-    - bundle exec jekyll build
 
 deployment:
   staging:
     branch: master
     commands:
-      - TARGET=staging bundle exec s3_website push
+      - TARGET=staging bundle exec jekyll build
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID_STAGING} AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY_STAGING} aws s3 sync _site s3://staging.transit.land/
   production:
-    branch: production 
+    branch: production
     commands:
-      - TARGET=prod bundle exec s3_website push
+      - TARGET=prod bundle exec jekyll build
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID_PROD} AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY_PROD} aws s3 sync _site s3://transit.land/
