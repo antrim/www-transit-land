@@ -1,5 +1,6 @@
 ---
 layout: default
+title: How it works
 ---
 <div id="hiw" class="jumbotron">
   <div class="title col-md-12 center-text">
@@ -21,11 +22,10 @@ layout: default
 
   <div id="slide-2" class="slide">
     <div id="slide-2-desc" class="slide-desc">
-      <b>Transitland Feed Registry</b> is a directory of feed URLs and IDs for transit networks. The registry is a set of JSON files hosted on GitHub, ready for you to consume into your own infrastructure or to expand with a pull request. It also serves as a "crosswalk" between different identifiers for the same feeds and agencies, such as US National Transit Database IDs.
+      <b>Transitland Feed Registry</b> is a directory of public-transit operators and their authoriative data feeds. The directory is a view into Transitland's Datastore API. Currently, it lets users browse operators and their feeds, as well as view the license restrictions on each feed. Soon, the Feed Registry will also let users contribute additional operators and feeds.
       <ul>
-        <li><a href="http://github.com/transitland/transitland-feed-registry">Feed Registry code on GitHub</a></li>
-        <li><a href="http://github.com/transitland/transitland-python-client">Python client</a></li>
-        <li><a href="http://github.com/transitland/transitland-ruby-client">Ruby client</a></li>
+        <li><a href="http://github.com/transitland/feed-registry">Feed Registry code on GitHub</a></li>
+        <li><a href="/feed-registry">Browse the Feed Registry</a></li>
       </ul>
     </div>
   </div>
@@ -98,17 +98,11 @@ window.addEventListener('load', function(){
   }
 
   //ios device making problem with fixed background
-  if (/iphone|ipod/i.test(navigator.userAgent.toLowerCase())){
-    var slideElems = document.getElementsByClassName('slide');
-    for(var i = 0; i < slideElems.length; i++) {
-      slideElems[i].style.backgroundAttachment = "scroll";
-      slideElems[i].style.backgroundPosition = "center 0px";
-    }
-  }else{
+  if (!isSmallScreen){
     window.addEventListener('scroll',function(){
     ScrollEvent.activateDots();
     ScrollEvent.animateFirstSlide();
-  });
+    });
   }
 
 
