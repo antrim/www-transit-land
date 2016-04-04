@@ -1,4 +1,4 @@
-section#blog {
+#blog, #documentation {
   //this is lame way to make footer to stick when post is short
   min-height: calc(100vh - 400px);
 
@@ -6,36 +6,35 @@ section#blog {
     margin: 30px 0;
   }
 
-  .title {
-    margin-bottom: $spacing-unit*2;
-    margin-top: $spacing-unit*1.5;
-  }
   .container { max-width: 800px;}
-  p {
-    margin-bottom:$spacing-unit;
-    margin-top:$spacing-unit;
-  }
 
-  .post-wrapper {
+}
+
+.post-wrapper {
     // This is for post, using whole new header style to make post writing easy
     width: 100%;
     height: auto;
     display: inline-block;
     padding: 30px 0;
     border-bottom: 2px solid #eee;
+}
+//blog and documentation are sharing these text style
+.post-wrapper,.documentation-content {
 
-    .post-info {
-      font-size: 16px;
-      font-weight: 300;
-      line-height: 32px;
-    }
+  p {
+    margin-bottom:$spacing-unit;
+    margin-top:$spacing-unit;
+    color: #333;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 27px;
+  }
 
-    .read-more {
-      margin: 10px 0;
-    }
 
-    h1 {
-      font-size: 28px;
+  p:first-child { margin-top: 0;}
+
+  h1 {
+    font-size: 28px;
       font-weight: 400;
       line-height: 36px;
       letter-spacing: initial;
@@ -63,11 +62,13 @@ section#blog {
       font-weight: 400;
       line-height: 27px;
     }
-    p {
-      font-size: 18px;
-      font-weight: 300;
-      line-height: 27px;
-      color: #333;
+    code {
+      padding: 4px 8px;
+      margin: 0 2px;
+      font-size: 14px;
+      line-height: 1.6em;
+      color: #666666;
+      background-color: #f8f8f8;
     }
     blockquote {
       font-size: 28px;
@@ -83,7 +84,6 @@ section#blog {
         content: '\"';
         padding-left: 5px;
       }
-
     }
     pre {
       font-size: 12px;
@@ -95,11 +95,19 @@ section#blog {
       width: 100%;
     }
 
-    ul li {
-      list-style: none;
-      font-size: 16px;
+    ol li {
+      font-size: 18px;
       font-weight: 300;
-      line-height: 23px;
+      line-height: 27px;
+      font-weight: 300;
+    }
+
+    ul li {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 27px;
+      list-style: none;
+      font-weight: 300;
       text-indent: -0.8em;
     }
 
@@ -120,6 +128,7 @@ section#blog {
       border: 2px solid $table-border-color;
       word-break: break-all;
       margin-bottom: 30px;
+      table-layout: fixed;
       @media (min-width: $screen-sm-min) {
         width: 100%;
         word-break: keep-all;
@@ -139,6 +148,16 @@ section#blog {
         vertical-align: top;
       }
     }
+    .post-info {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 32px;
+    }
+
+    .read-more {
+      margin: 10px 0;
+    }
+
     .caption {
       font-style: italic;
       color: #666;
@@ -162,7 +181,6 @@ section#blog {
 
   }
 
-}
 
 .infinite-spinner {
   display: block;
